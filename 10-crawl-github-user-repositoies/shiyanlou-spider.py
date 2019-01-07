@@ -2,7 +2,7 @@
 
 import scrapy
 
-class ShiyanlouGithubSpider(scrapy.Spider):
+class ShiyanlouGithub(scrapy.Spider):
     name = 'shiyanlou-github'
 
     @property
