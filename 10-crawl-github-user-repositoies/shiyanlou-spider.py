@@ -14,7 +14,7 @@ class ShiyanlouGithub(scrapy.Spider):
                 'https://github.com/shiyanlou?after=Y3Vyc29yOnYyOpK5MjAxNC0xMS0yMVQxODowOTowMiswODowMM4BnQBZ&tab=repositories',)
 
     def parse(self, response):
-        for user in response.css('div.user-repositories-list'):
+        for user in response.css('li.public'):
             yield {
                     "name": user.xpath('.//a[@itemprop="name codeRepository"]/text()').re(r'\n\s*(.*)'),
                     "update_time": user.xpath('.//relative-time/@datetime').extract()
