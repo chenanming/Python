@@ -1,8 +1,8 @@
-from flask import Blurprint, render_template
+from flask import Blueprint, render_template
 from simpledu.models import User
 
 
-user = Blurprint('user', __name__, url_prefix='/user')
+user = Blueprint('user', __name__, url_prefix='/user')
 
 @user.route('/<username>')
 def index(username):
