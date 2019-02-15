@@ -3,10 +3,10 @@
 {%block title %}Home{% endblock %}
 
 {%block body %}
-{% for course in courses %}
-<h1> ID: {{ course.author.id }}</h1>
-<h1> Username: {{ course.author.username }}</h1>
+<h1> ID: {{ user.id }}</h1>
+<h1> Username: {{ user.username }}</h1>
 <h1> Published courses: </h1>
+{% for course in user.publish_courses %}
 <p>{{ course.name }}</p>
 {% endfor %}
 {% endblock %}
